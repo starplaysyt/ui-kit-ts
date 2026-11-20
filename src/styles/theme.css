@@ -1,0 +1,18 @@
+:root {
+    --color-bg: #0A0A0F;
+    --color-primary: #FACC14;
+
+    --color-panel: #141419;
+    --color-panel-2: #1D1D25;
+    --color-panel-3: #21212B;
+
+    --color-border: #2B2B36;
+    --color-border-hover: #393947;
+
+    --color-text: #E8E8ED;
+    --color-text-dim: #6B6B7B;
+}
+
+body.light {
+
+}

@@ -4,7 +4,11 @@ export const TestPage = () => {
     return (
         <div>
             <Button title={"TestValue"}></Button>
-            <p>Testinfo</p>
+            <p>
+                TestText
+                TestText
+                <b>TestText</b>
+            </p>
         </div>
     )
 }
