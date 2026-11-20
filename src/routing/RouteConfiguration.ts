@@ -53,3 +53,11 @@ export type RouterConfigSource = {
     redirectRules : RedirectRule[];
     layouts : LayoutRule[];
 }
+
+export type SidebarElement = {
+    path : string,
+    pathToIcon : string | null,
+    title: string,
+    groupName : string,
+    userGroup : string[] | null
+}

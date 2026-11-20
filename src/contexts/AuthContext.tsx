@@ -1,4 +1,11 @@
 import { createContext, type ReactNode, useCallback, useContext, useState } from "react";
+import type {UserPermissionsData} from "../auth/auth.ts";
+
+export type AuthUser = {
+    login: string;
+    name: string;
+    auth_data: UserPermissionsData;
+}
 
 type AuthorizeAction = (login: string, password: string) => Promise<AuthUser | null>;
 type AuthorizeApiCall = (login: string, password: string) => Promise<AuthUser | null>;
@@ -6,25 +13,16 @@ type AuthorizeApiCall = (login: string, password: string) => Promise<AuthUser | 
 const AuthWritingContext = createContext<AuthorizeAction | undefined>(undefined);
 const AuthReadingContext = createContext<AuthUser | null | undefined>(undefined);
 
-const UserLoginRequest: AuthorizeApiCall = async (login, _password) => {
-    return new AuthUser(0, login, ["sa"], "SA", []);
-};
-
-export class AuthUser {
-    public id: number;
-    public fullName: string;
-    public roles: string[];
-    public initials: string;
-    public permissions: string[];
-
-    constructor(id : number, fullName : string, roles : string[], initials : string, permissions : string[]) {
-        this.id = id;
-        this.fullName = fullName;
-        this.roles = roles;
-        this.initials = initials;
-        this.permissions = permissions;
+const UserLoginRequest : AuthorizeApiCall = async (login : string, _password : string) : Promise<AuthUser> => {
+    return {
+        login: login,
+        name: "Test Name with multiple, and here is the login: " + login,
+        auth_data: {
+            userGroup: null,
+            permissions: []
+        }
     }
-}
+};
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<AuthUser | null>(null);
