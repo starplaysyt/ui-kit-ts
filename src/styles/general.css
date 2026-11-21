@@ -25,10 +25,8 @@ html {
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
 
-html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* rem */
 }
 
 body {
@@ -40,8 +38,3 @@ body {
     font-family: "Roboto Mono", monospace;
     font-size: 1.6rem;
 }
-
-.hidden {
-    display: none;
-}
-

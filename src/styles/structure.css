@@ -1,0 +1,53 @@
+.v-panel {
+    background: var(--color-panel);
+    border: 0.1rem solid var(--color-border);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    border-radius: 1.2rem;
+}
+
+.v-panel-2 {
+    background: var(--color-panel-2);
+    border: 0.1rem solid var(--color-border);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    border-radius: 1.2rem;
+}
+
+.v-panel-3 {
+    background: var(--color-panel-3);
+    border: 0.1rem solid var(--color-border);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    border-radius: 1.2rem;
+}
+
+.b-vert {
+    display: flex;
+    flex-flow: column nowrap;
+    width: auto;
+    height: auto;
+
+    padding: 3rem;
+
+    gap: 1.8rem;
+}
+
+.b-hori {
+    display: flex;
+    flex-flow: row nowrap;
+    height: auto;
+
+    padding: 3rem;
+
+    gap: 1.8rem;
+}
+
+.b-w-fill {
+    width: 100%;
+}
+
+.b-h-fill {
+    height: 100%;
+}
+
+.b-w-hug {
+    width: auto;
+}

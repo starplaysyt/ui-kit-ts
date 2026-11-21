@@ -5,28 +5,11 @@ import {
     RouteRule,
     type SidebarElement
 } from "./routing/RouteConfiguration.ts";
-import {TextButton} from "./components/Buttons/TextButton.tsx";
 import {useContext} from "react";
 import {AuthProvider, useAuth} from "./contexts/AuthContext.tsx";
 import type {RouteObject} from "react-router-dom";
 import {SidebarLayout} from "./layouts/SidebarLayout.tsx";
 import {TestPage} from "./pages/TestPage.tsx";
-
-export const RoutesConfig : RouterConfigSource = {
-    layouts: [
-        new LayoutRule("minimal", TextButton),
-    ],
-    routes: [
-        new RouteRule("testPage", "/testPage", TextButton, "minimal",
-            false, [], [], "", true)
-    ],
-    redirectRules: [
-        new RedirectRule("/login", () => {
-            const context = useAuth();
-            return context === null;
-        }, "/dashboard")
-    ]
-}
 
 export const RouterRoutes : RouteObject[] = [
     {
@@ -34,10 +17,7 @@ export const RouterRoutes : RouteObject[] = [
         Component: SidebarLayout,
         children: [
             {
-                index: true
-            },
-            {
-                path: "/dashboard",
+                index: true,
                 Component: TestPage,
                 loader: (args) => {
 

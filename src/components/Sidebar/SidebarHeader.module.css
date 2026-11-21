@@ -1,0 +1,51 @@
+.sidebar-header {
+    padding: 2rem 1.5rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .info-panel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 1.3rem;
+        grid-template-columns: auto 1fr;
+
+        .titles {
+            display: grid;
+            grid-auto-flow: row;
+            grid-gap: 0.5rem;
+        }
+
+        .logo {
+            background: var(--color-panel-3);
+            border: 0.1rem solid var(--color-border);
+            border-radius: 0.8rem;
+            padding: 1rem;
+
+            align-self: center;
+
+            height: fit-content;
+
+            div {
+                mask-position: center;
+                mask-size: contain;
+
+                background: var(--color-primary);
+
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+        }
+    }
+
+    .action-panel {
+        display: grid;
+        grid-auto-flow: column;
+
+        justify-content: space-between;
+        align-items: center;
+        gap: 2.2rem;
+    }
+}

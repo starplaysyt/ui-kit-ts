@@ -1,3 +1,9 @@
-nav.sidebar {
-    background: var(--color-panel)
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 26rem;
+
+    gap: 1.5rem;
 }

@@ -1,3 +1,6 @@
+import styles from "./Button.module.css";
+import type {MouseEventHandler} from "react";
+
 type ButtonProps = {
     iconPath?: string,
     title?: string,
@@ -7,11 +10,11 @@ type ButtonProps = {
     isEnabled?: boolean,
     isVisible?: boolean,
 
-    onClick?: Promise<any>,
+    onClick?: MouseEventHandler,
 }
 
 export const Button = (props : ButtonProps) => {
     return (
-        <button>{props.title}</button>
+        <button onClick={props.onClick}>{props.title}</button>
     )
 }

@@ -10,4 +10,9 @@ export default defineConfig({
           filter: url => url.startsWith('http://192'),
       })
   ],
+    css: {
+        modules: {
+            localsConvention: 'camelCaseOnly'
+        }
+    }
 })
