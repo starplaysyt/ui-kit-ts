@@ -51,3 +51,13 @@
 .b-w-hug {
     width: auto;
 }
+
+.icon {
+    width: var(--size-square-small);
+    height: var(--size-square-small);
+
+    mask-position: center;
+    mask-size: contain;;
+
+    background: var(--color-secondary-contrast);
+}

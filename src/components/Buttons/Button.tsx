@@ -1,5 +1,6 @@
-import styles from "./Button.module.css";
+import "./Button.css";
 import type {MouseEventHandler} from "react";
+import {Icon} from "../Icon/Icon.tsx";
 
 type ButtonProps = {
     iconPath?: string,
@@ -15,6 +16,12 @@ type ButtonProps = {
 
 export const Button = (props : ButtonProps) => {
     return (
-        <button onClick={props.onClick}>{props.title}</button>
+        <button onClick={props.onClick}>
+            {props.iconPath && (
+                <Icon src={props.iconPath}></Icon>
+            )}
+            {/*(iconPath && )*/}
+            {/*(props.title && {props.title})*/}
+        </button>
     )
 }

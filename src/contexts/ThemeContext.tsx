@@ -1,43 +1,51 @@
-import {createContext, useContext, useMemo, useState} from "react";
 import * as React from "react";
+import {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
 
-type CurrentTheme = {
+export type DesignTheme = {
     themeName: string,
     themeClass: string
 }
 
 type ThemeSetter = {
-    setTheme: (theme: CurrentTheme) => void;
-}
-
-type ThemeGetter = {
-    theme: CurrentTheme;
+    setTheme: (theme: DesignTheme) => void;
 }
 
 type ThemeProviderProps = {
     children: React.ReactNode;
 }
 
-const DEFAULT_THEME = {themeName: "Default", themeClass: ""};
+const DEFAULT_THEME = {themeName: "Default", themeClass: "dark"};
 
 const ThemeContextReadingProvider =
-    createContext<ThemeGetter>({theme: DEFAULT_THEME});
+    createContext<DesignTheme>(DEFAULT_THEME);
 
 const ThemeContextWritingProvider =
     createContext<ThemeSetter | undefined>(undefined);
 
 export const ThemeProvider = ({children}: ThemeProviderProps) => {
-    const [theme, setTheme] = useState<CurrentTheme>(
+    useEffect(() => {
+        document.body.classList.add(DEFAULT_THEME.themeClass);
+    }, [])
+
+    const [theme, setTheme] = useState<DesignTheme>(
         DEFAULT_THEME
     );
 
-    const readingValue: ThemeGetter = useMemo(
-        () => ({theme: theme}),
+    const setGlobalTheme = useCallback((newTheme: DesignTheme) => {
+        setTheme((old) => {
+            document.body.classList.remove(old.themeClass);
+            document.body.classList.add(newTheme.themeClass);
+            return newTheme;
+        });
+    }, [])
+
+    const readingValue: DesignTheme = useMemo(
+        () => (theme),
         [theme]);
 
     const writingValue: ThemeSetter = useMemo(
-        () => ({setTheme}),
-        []);
+        () => ({setTheme: setGlobalTheme}),
+        [setGlobalTheme]);
 
     return (
         <ThemeContextWritingProvider value={writingValue}>
@@ -48,15 +56,15 @@ export const ThemeProvider = ({children}: ThemeProviderProps) => {
     );
 }
 
-export const useThemeGetter = () => {
-    const theme = useContext(ThemeContextReadingProvider);
-    return theme;
+// eslint-disable-next-line react-refresh/only-export-components
+export const useTheme = () => {
+    return useContext(ThemeContextReadingProvider);
 }
 
-export const useThemeSetter = () => {
-    const theme = useContext(ThemeContextWritingProvider);
-    if (theme === undefined) {
+// eslint-disable-next-line react-refresh/only-export-components
+export const useSetTheme = () => {
+    const setter = useContext(ThemeContextWritingProvider);
+    if (!setter)
         throw new Error("useThemeSetter must be used within ThemeProvider");
-    }
-    return theme
+    return setter;
 }

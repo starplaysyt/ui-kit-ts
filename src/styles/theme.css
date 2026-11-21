@@ -1,6 +1,20 @@
-:root {
-    --color-bg: #0A0A0F;
-    --color-primary: #FACC14;
+/*:root {*/
+/*    --color-bg: #0A0A0F;*/
+/*    --color-primary: #FACC14;*/
+
+/*    --color-panel: #141419;*/
+/*    --color-panel-2: #1D1D25;*/
+/*    --color-panel-3: #21212B;*/
+
+/*    --color-border: #2B2B36;*/
+/*    --color-border-hover: #393947;*/
+
+/*    --color-text: #E8E8ED;*/
+/*    --color-text-dim: #6B6B7B;*/
+/*}*/
+
+body.dark {
+    --color-page-bg: #0A0A0F;
 
     --color-panel: #141419;
     --color-panel-2: #1D1D25;
@@ -11,6 +25,64 @@
 
     --color-text: #E8E8ED;
     --color-text-dim: #6B6B7B;
+
+    --color-accent: #facc14;
+    --color-accent-active: #e7b108;
+    --color-accent-contrast: #0a0a0f;
+    --color-accent-soft: #facc1414;
+    --color-accent-glow: #facc141f;
+    --color-accent-border: #facc1466;
+
+    --color-accent-hover: #e7b108;
+    --color-accent-border-hover: #facc1466;
+    --color-accent-contrast-hover: #0a0a0f;
+
+    --color-secondary: #1D1D25;
+    --color-secondary-active: #21212B;
+    --color-secondary-contrast: #E8E8ED;
+    --color-secondary-soft: #1D1D25;
+    --color-secondary-glow: #2B2B3685;
+    --color-secondary-border: #2A2A37;
+
+    --color-secondary-hover: #2B2B3685;
+    --color-secondary-border-hover: #2A2A37;
+    --color-secondary-contrast-hover: #E8E8ED;
+
+    /* panels */
+    --corner-radius-1: 1.2rem;
+    /* components */
+    --corner-radius-2: 0.8rem;
+    /* internal components, like sidebar menu internal panels */
+    --corner-radius-3: 0.6rem;
+
+    /* panels */
+    --border-width-1: 0.2rem;
+    /* components */
+    --border-width-2: 0.1rem;
+
+    --border-glow-width: 0.2rem;
+
+    /* font reference:  font-style? - <normal | italic | oblique>
+                        font-variant? - <normal | small-caps>
+                        font-weight? - <normal | bold | ect>
+                        font-stretch? - <condensed | expanded | ect>
+                        font-size / line-height? - <font-size>
+                        font-family - <font-family>
+    */
+    --font-base: 1.2rem, "Roboto Mono";
+    --font-base-uppercase: 1.2rem, "Roboto Mono";
+    --font-dim: 1.2rem, "Roboto Mono";
+    --font-dim-uppercase: 1.2rem, "Roboto Mono";
+    --font-small: 1.2rem, "Roboto Mono";
+    --font-small-uppercase: 1.2rem, "Roboto Mono";
+
+    --size-square-small: 1.8rem;
+    --size-square: 4rem;
+    --size-square-large: 4rem;
+
+    --duration-slow: 350ms;
+    --duration-medium: 250ms;
+    --duration-fast: 150ms;
 }
 
 body.light {

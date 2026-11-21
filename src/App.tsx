@@ -1,4 +1,3 @@
-import './App.css'
 import {LoadingProvider} from "./contexts/LoadingContext.tsx";
 import {ThemeProvider} from "./contexts/ThemeContext.tsx";
 import {AuthProvider} from "./contexts/AuthContext.tsx";

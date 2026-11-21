@@ -1,0 +1,31 @@
+button {
+    display: grid;
+
+    background: var(--color-secondary);
+    border: var(--border-width-2) solid var(--color-border-hover);
+    border-radius: var(--corner-radius-3);
+
+    width: var(--size-square);
+    height: var(--size-square);
+
+    align-content: center;
+    justify-content: center;
+
+    transition: color var(--duration-fast),
+    background-color var(--duration-fast),
+    border-color var(--duration-fast)
+}
+
+button:hover {
+    background-color: var(--color-secondary-hover);
+    border-color: var(--color-secondary-border-hover);
+}
+
+button:active {
+    background-color: var(--color-secondary-active);
+    transform: scale(99%);
+}
+
+button img {
+
+}

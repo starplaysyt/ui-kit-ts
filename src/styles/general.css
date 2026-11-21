@@ -30,7 +30,7 @@ html {
 }
 
 body {
-    background: var(--color-bg);
+    background: var(--color-page-bg);
     color: var(--color-text);
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
